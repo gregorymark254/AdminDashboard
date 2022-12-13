@@ -14,8 +14,8 @@ const BookingReport = () => {
   };
 
   const deletereport = async (id) => {
-    window.confirm("Are you sure you want to delete this account")
     try {
+      window.confirm("Are you sure you want to delete this account")
       await axios.delete(`http://localhost:5000/api/v5/delete/${id}`);
       getReport();
     } catch (error) {
@@ -96,7 +96,7 @@ const BookingReport = () => {
           </div>
         </div>
 
-        <div className="bg-white p-4 rounded-lg">
+        <div className="bg-white p-4 rounded-lg ">
           <div className="p-4">
             <p className="text-2xl"><b>All Report</b></p>
           </div>
@@ -119,7 +119,7 @@ const BookingReport = () => {
               </form>
             </div>
           </div>
-          <div className="overflow-x-auto border border-slate-300 mt-6">
+          <div className="overflow-x-auto border border-slate-300 mt-6 max-w-6xl">
             <table className="w-full text-sm text-left">
                 <thead className="text-gray-700 bg-gray-50 ">
                   <tr>

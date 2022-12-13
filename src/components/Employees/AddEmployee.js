@@ -5,22 +5,21 @@ import { toast } from 'react-toastify';
 
 const AddEmployee = () => {
 
+  const [idnumber, setIdNumber] = useState('')
   const [firstname, setFname] = useState('')
   const [lastname, setLname] = useState('')
-  const [othernames, setOname] = useState('')
+  const [middlename, setMname] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [address, setAddress] = useState('')
   const [department, setDepartment] = useState('')
-  const [ccr, setCcr] = useState('')
-  const [fullTime, setFullTime] = useState('')
+  const [position, setPosition] = useState('')
+  const [time, setTime] = useState('')
   const [date, setDate] = useState('')
   const [udate, setUdate] = useState('')
-  const [male, setMale] = useState('')
-  const [female, setFemale] = useState('')
-  const [single, setSingle] = useState('')
-  const [married, setMarried] = useState('')
-  const [others, setOthers] = useState('')
+  const [birth, setBirth] = useState('')
+  const [gender, setGender] = useState('')
+  const [status, setStatus] = useState('')
   const [file, setFile] = useState('')
 
   const navigate = useNavigate();
@@ -29,7 +28,7 @@ const AddEmployee = () => {
     e.preventDefault()
     try {
       const response = await axios.post('http://localhost:5000/api/v1/add',
-      JSON.stringify({firstname,lastname,email,phone,address,ccr,fullTime,date,udate,male,female,single,married,others,file}),
+      JSON.stringify({idnumber,firstname,lastname,middlename,email,phone,address,department,position,time,date,udate,birth,gender,status,file}),
     {
       headers : { 'Content-type' : 'application/json'},
       withCredentials : true
@@ -65,6 +64,17 @@ const AddEmployee = () => {
           <form onSubmit={handleSubmit} className="md:grid grid-cols-3 gap-4">
             <div>
               <div className="mx-4">
+                <label htmlFor="">ID Number</label>
+                <input 
+                  type="text" 
+                  name="idno" id="idno"
+                  className="px-3 py-1 w-44 bg-slate-100 border  border-slate-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  focus:ring-1"
+                  required
+                  value={idnumber}
+                  onChange = { (e) => setIdNumber(e.target.value) }
+                />
+              </div>
+              <div className="mx-4">
                 <label htmlFor="">First Name</label>
                 <input 
                   type="text" 
@@ -87,14 +97,14 @@ const AddEmployee = () => {
                 />
               </div>
               <div className="mx-4">
-                <label htmlFor="">Other Names</label>
+                <label htmlFor="">Middle Names</label>
                 <input 
                   type="text" 
-                  name="othernames" id="othernames"
+                  name="middle" id="middle"
                   className="px-3 py-1 w-44 bg-slate-100 border  border-slate-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  focus:ring-1"
                   required
-                  value={othernames}
-                  onChange = { (e) => setOname(e.target.value) }
+                  value={middlename}
+                  onChange = { (e) => setMname(e.target.value) }
                 />
               </div>
               <div className="mx-4">
@@ -137,10 +147,12 @@ const AddEmployee = () => {
                 <select 
                   className="px-3 py-1 w-44 bg-slate-50 border  border-slate-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  focus:ring-1"
                   required
+                  value={department}
                   onChange = { (e) => setDepartment(e.target.value) }
                   name="department" id="department">
-                  <option value={department} >Choose</option>
-                  <option value={department}>Ccr</option>
+                  <option value="1" >Choose</option>
+                  <option value="CCR">Ccr</option>
+                  <option value="IT">It</option>
                 </select>
               </div>
               <div className="mx-4">
@@ -148,9 +160,12 @@ const AddEmployee = () => {
                 <select 
                   className="px-3 py-1 w-44 bg-slate-50 border  border-slate-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  focus:ring-1"
                   required
+                  value={position}
+                  onChange = { (e) => setPosition(e.target.value) }
                   name="position" id="position">
-                  <option value="sfsd">Selct Position</option>
-                  <option value={ccr} onChange = { (e) => setCcr(e.target.value) }>ccr</option>
+                  <option value="1">Selct Position</option>
+                  <option value="CCR" >ccr</option>
+                  <option value="OKOA" >okoa</option>
                 </select>
               </div>
               <div className="mx-4">
@@ -158,11 +173,12 @@ const AddEmployee = () => {
                 <select 
                   className="px-3 py-1 w-44 bg-slate-50 border  border-slate-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  focus:ring-1"
                   required
-                  onChange = { (e) => setFullTime(e.target.value) }
+                  value={time}
+                  onChange = { (e) => setTime(e.target.value) }
                   name="duty" id="duty">
-                  <option value="">Time</option>
-                  <option value={fullTime}>Full Time</option>
-                  <option value={fullTime}>Part Time</option>
+                  <option value="1">Select Time</option>
+                  <option value="Full Time">Full Time</option>
+                  <option value="Part Time">Part Time</option>
                 </select>
               </div>
               <div className="mx-4">
@@ -196,8 +212,8 @@ const AddEmployee = () => {
                   name="birth" id="birth"
                   className="px-3 py-1 w-44 bg-slate-50 border  border-slate-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  focus:ring-1"
                   required
-                  value={date}
-                  onChange = { (e) => setDate(e.target.value) }
+                  value={birth}
+                  onChange = { (e) => setBirth(e.target.value) }
                 />
               </div>
               <div className="mx-4">
@@ -205,9 +221,12 @@ const AddEmployee = () => {
                 <select 
                   className="px-3 py-1 w-44 bg-slate-50 border  border-slate-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  focus:ring-1"
                   required
+                  value={gender}
+                  onChange = { (e) => setGender(e.target.value) }
                   name="gender" id="gender">
-                  <option value={male} onChange = { (e) => setMale(e.target.value) }>Male</option>
-                  <option value={female} onChange = { (e) => setFemale(e.target.value) }>Female</option>
+                  <option value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
                 </select>
               </div>
               <div className="mx-4">
@@ -215,10 +234,13 @@ const AddEmployee = () => {
                 <select 
                   className="px-3 py-1 w-44 bg-slate-50 border  border-slate-300 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  focus:ring-1"
                   required
-                  name="marital" id="marital">
-                  <option value={single} onChange = { (e) => setSingle(e.target.value) }>Single</option>
-                  <option value={married} onChange = { (e) => setMarried(e.target.value) }>Married</option>
-                  <option value={others} onChange = { (e) => setOthers(e.target.value) }>Others</option>
+                  value={status}
+                  onChange = { (e) => setStatus(e.target.value) }
+                  name="status" id="status">
+                  <option value="Selct" >Select</option>
+                  <option value="Single" >Single</option>
+                  <option value="Maried" >Married</option>
+                  <option value="Others" >Others</option>
                 </select>
               </div>
               <div className="mx-4">

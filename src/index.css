@@ -34,3 +34,10 @@ body {
   background-color : #EEF1FF;
 }
 
+th,tr:nth-child(even) {
+  background-color: #EEF1FF;
+}
+
+tr:hover {
+  background-color: #EEF1FF;
+}

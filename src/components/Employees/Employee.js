@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { MdDelete } from "react-icons/md";
+import { MdDelete} from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 
 
@@ -14,9 +14,9 @@ const Employee = () => {
     setEmployees(response.data);
   };
 
-  const deleteEmployees = async (id) => {
-    window.confirm("Are you sure you want to delete this account")
+  const deleteEmployees = async (id) => {   
     try {
+      window.confirm("Are you sure you want to delete this account")
       await axios.delete(`http://localhost:5000/api/v1/delete/${id}`);
       getEmployees();
     } catch (error) {
@@ -53,17 +53,17 @@ const Employee = () => {
               </form>
             </div>
           </div>
-          <div className="overflow-x-auto border border-slate-300 mt-6">
+          <div className="md:overflow-x-auto overflow-y-scroll border border-slate-300 mt-6 max-w-6xl">
             <table className="w-full text-sm text-left">
                 <thead className="text-gray-700 bg-gray-50 ">
-                  <tr>
+                  <tr className="">
                     <th className="py-3 px-6">No.</th>
-                    {/* <th className="py-3 px-6">
+                    <th className="py-3 px-6">
                       <div className="flex items-center">
                         <span>ID Number</span>
                         <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 w-3 h-3" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/></svg>
                       </div>
-                    </th> */}
+                    </th>
                     <th className="py-3 px-6">
                       <div className="flex items-center">
                         <span>First Name</span>
@@ -112,25 +112,25 @@ const Employee = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 w-3 h-3" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/></svg>
                       </div>
                     </th>
-                    <th className="py-3 px-6">
+                    <th className="py-3 px-10">
                       <div className="flex items-center">
                         <span>Duty</span>
                         <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 w-3 h-3" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/></svg>
                       </div>
                     </th>
-                    <th className="py-3 px-6">
+                    <th className="py-3 px-10">
                       <div className="flex items-center">
                         <span>Hire Date</span>
                         <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 w-3 h-3" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/></svg>
                       </div>
                     </th>
-                    <th className="py-3 px-6">
+                    <th className="py-3 px-10">
                       <div className="flex items-center">
                         <span>Until Date</span>
                         <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 w-3 h-3" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/></svg>
                       </div>
                     </th>
-                    <th className="py-3 px-6">
+                    <th className="py-3 px-10">
                       <div className="flex items-center">
                         <span>Date of Birth</span>
                         <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 w-3 h-3" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/></svg>
@@ -164,24 +164,24 @@ const Employee = () => {
                 </thead>
                 <tbody>
                   {employees.map((employees, index) => (
-                    <tr key={employees._id} className="bg-white border-b border-slate-500">
+                    <tr key={employees.id} className="bg-white border-b border-slate-500">
                       <td className="py-4 px-6">{index + 1}</td>
-                      {/* <td className="py-4 px-6">{employees.idnumber}</td> */}
+                      <td className="py-4 px-6">{employees.idnumber}</td>
                       <td className="py-4 px-6">{employees.firstname}</td>
                       <td className="py-4 px-6">{employees.lastname}</td>
-                      <td className="py-4 px-6">{employees.othernames}</td>
+                      <td className="py-4 px-6">{employees.middlename}</td>
                       <td className="py-4 px-6">{employees.email}</td>
                       <td className="py-4 px-6">{employees.phone}</td>
                       <td className="py-4 px-6">{employees.address}</td>
                       <td className="py-4 px-6">{employees.department}</td>
                       <td className="py-4 px-6">{employees.position}</td>
-                      <td className="py-4 px-6">{employees.duty}</td>
-                      <td className="py-4 px-6">{employees.hiredate}</td>
-                      <td className="py-4 px-6">{employees.untildate}</td>
+                      <td className="py-4 px-6">{employees.time}</td>
+                      <td className="py-4 px-6">{employees.date}</td>
+                      <td className="py-4 px-6">{employees.udate}</td>
                       <td className="py-4 px-6">{employees.birth}</td>
                       <td className="py-4 px-6">{employees.gender}</td>
                       <td className="py-4 px-6">{employees.status}</td>
-                      <td className="py-4 px-6">{employees.image}</td>
+                      <td className="py-4 px-6">{employees.file}</td>
                       <td className="flex items-center text-xl py-4 px-6 space-x-2">
                         <Link to={`/edit/${employees._id}`} className="bg-teal-500 p-1 text-md text-white mr-1"><FaEdit/></Link>
                         <button onClick={() => deleteEmployees(employees._id)} className="bg-red-500 p-1 text-md text-white"><MdDelete/></button>

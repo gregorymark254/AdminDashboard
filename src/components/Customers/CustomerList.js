@@ -15,8 +15,8 @@ const CustomerList = () => {
   };
 
   const deleteCustomer = async (id) => {
-    window.confirm("Are you sure you want to delete this account")
     try {
+      window.confirm("Are you sure you want to delete this account")
       await axios.delete(`http://localhost:5000/api/v3/delete/${id}`);
       getCustomer();
     } catch (error) {
@@ -57,7 +57,7 @@ const CustomerList = () => {
               </form>
             </div>
           </div>
-          <div className="overflow-x-auto border border-slate-300 mt-6">
+          <div className="md:overflow-x-auto border border-slate-300 mt-6">
             <table className="w-full text-sm text-left">
                 <thead className="text-gray-700 bg-gray-50 ">
                   <tr>

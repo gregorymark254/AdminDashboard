@@ -1,11 +1,15 @@
 import Topnav from './components/Nav/TopBar'
 import Sidebar from './components/Nav/SideBar'
 import Users from './components/Users/User'
+import SmsConfig from './components/Users/smsConfig'
+import SmsTemplate from './components/Users/smsTemplate'
 import Edit from './components/Users/EditUser'
 import AddUser from './components/Users/AddUser'
 import Employees from './components/Employees/Employee'
 import AddEmployees from './components/Employees/AddEmployee'
-import Transactions from './components/Transactions/Transaction'
+import Purchase from './components/Purchase/Purchase'
+import AddPurchase from './components/Purchase/AddPurchase'
+import ReturnInvoice from './components/Purchase/ReturnInvoice'
 import CustomerList from './components/Customers/CustomerList'
 import GuestList from './components/Customers/GuestList'
 import Setting from './components/Settings/Setting'
@@ -56,11 +60,15 @@ const App = () => {
                 <Route path="/" element={<Home />}/>
                 <Route path="/login" element={<Login />}/>
                 <Route path="/users" element={<Users />}/>
+                <Route path="/sms-config" element={<SmsConfig />}/>
+                <Route path="/sms-template" element={<SmsTemplate />}/>
                 <Route path="/add" element={<AddUser />}/>
                 <Route path="/edit/:id" element={<Edit />}/>
                 <Route path="/employees" element={<Employees />}/>
                 <Route path="/add-employees" element={<AddEmployees />}/>
-                <Route path="/transactions"element={<Transactions />}/>
+                <Route path="/purchase"element={<Purchase />}/>
+                <Route path="/add-purchase"element={<AddPurchase />}/>
+                <Route path="/return-invoice"element={<ReturnInvoice />}/>
                 <Route path="/customers" element={<CustomerList />}/>
                 <Route path="/guest-list" element={<GuestList />}/>
                 <Route path="/booking-report" element={<BookingReport />}/>

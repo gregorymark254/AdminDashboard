@@ -20,7 +20,7 @@ const Home = () => {
         <div className="md:grid grid-cols-4 gap-4 mt-8">
           <div className="bg-white">
             <div className="flex justify-between text-right p-4">
-              <span className="text-4xl bg-orange-500 text-white p-4 relative  -top-8 rounded-md"><MdOutlineDateRange/></span>
+              <span className="text-4xl bg-orange-500 text-white p-4 -top-8 rounded-md"><MdOutlineDateRange/></span>
               <div>
                 <h6>TODAY BOOKING</h6>
                 <h5>3</h5>
@@ -32,7 +32,7 @@ const Home = () => {
           </div>
           <div className="bg-white">
             <div className="flex justify-between text-right p-4">
-              <span className="text-4xl bg-emerald-700 text-white p-4 relative -top-8 rounded-md"><FaDollarSign/></span>
+              <span className="text-4xl bg-emerald-700 text-white p-4 -top-8 rounded-md"><FaDollarSign/></span>
               <div>
                 <h6>TOTAL AMOUNT</h6>
                 <h5>389.2m</h5>
@@ -44,7 +44,7 @@ const Home = () => {
           </div>
           <div className="bg-white">
             <div className="flex justify-between text-right p-4">
-              <span className="text-4xl bg-red-700 text-white p-4 relative -top-8 rounded-md"><FaUserCircle/></span>
+              <span className="text-4xl bg-red-700 text-white p-4 -top-8 rounded-md"><FaUserCircle/></span>
               <div>
                 <h6>TOTAL CUSTOMERS</h6>
                 <h5>3K</h5>
@@ -56,7 +56,7 @@ const Home = () => {
           </div>
           <div className="bg-white">
             <div className="flex justify-between text-right p-4">
-              <span className="text-4xl bg-teal-500 text-white p-4 relative -top-8 rounded-md"><MdDateRange/></span>
+              <span className="text-4xl bg-teal-500 text-white p-4 -top-8 rounded-md"><MdDateRange/></span>
               <div>
                 <h6>TOTAL BOOKING</h6>
                 <h5>361</h5>
@@ -69,16 +69,16 @@ const Home = () => {
         </div>
 
         {/* graphs */}
-        <div>
-        <BarChart width={730} height={250} data={data}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="pv" fill="#8884d8" />
-          <Bar dataKey="uv" fill="#82ca9d" />
-        </BarChart>
+        <div className="mt-10">
+          <BarChart width={730} height={250} data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="pv" fill="#8884d8" />
+            <Bar dataKey="uv" fill="#82ca9d" />
+          </BarChart>
         </div>
       </div>
     </main>

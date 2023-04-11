@@ -27,7 +27,7 @@ const AddEmployee = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:5000/api/v1/add',
+      const response = await axios.post('https://xain-hotel-server.up.railway.app/api/v1/add',
       JSON.stringify({idnumber,firstname,lastname,middlename,email,phone,address,department,position,time,date,udate,birth,gender,status,file}),
     {
       headers : { 'Content-type' : 'application/json'},

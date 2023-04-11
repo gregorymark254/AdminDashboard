@@ -21,7 +21,7 @@ const AddUser = () => {
       return
     } 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register',
+      const response = await axios.post('https://xain-hotel-server.up.railway.app/api/auth/register',
       JSON.stringify({firstname,lastname,email,phone,password}),
     {
       headers : { 'Content-type' : 'application/json'},

@@ -13,7 +13,7 @@ const EditUser = () => {
 
   
   const getUserById = async () => {
-    const response = await axios.get(`http://localhost:5000/api/v2/users/${id}`);
+    const response = await axios.get(`https://xain-hotel-server.up.railway.app/api/v2/users/${id}`);
     setFname(response.data.firstname);
     setLname(response.data.lastname);
     setEmail(response.data.email);
@@ -23,7 +23,7 @@ const EditUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/v2/users/update/${id}`,{
+      await axios.put(`https://xain-hotel-server.up.railway.app/api/v2/users/update/${id}`,{
         firstname,
         lastname,
         email,

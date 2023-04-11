@@ -10,14 +10,14 @@ const CustomerList = () => {
   const [customer, setCustomer] = useState([]);
 
   const getCustomer = async () => {
-    const response = await axios.get("http://localhost:5000/api/v3/all");
+    const response = await axios.get("https://xain-hotel-server.up.railway.app/api/v3/all");
     setCustomer(response.data);
   };
 
   const deleteCustomer = async (id) => {
     try {
       window.confirm("Are you sure you want to delete this account")
-      await axios.delete(`http://localhost:5000/api/v3/delete/${id}`);
+      await axios.delete(`https://xain-hotel-server.up.railway.app/api/v3/delete/${id}`);
       getCustomer();
     } catch (error) {
       console.log(error);

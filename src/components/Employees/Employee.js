@@ -10,14 +10,14 @@ const Employee = () => {
   const [employees, setEmployees] = useState([]);
 
   const getEmployees = async () => {
-    const response = await axios.get("http://localhost:5000/api/v1/all");
+    const response = await axios.get("https://xain-hotel-server.up.railway.app/api/v1/all");
     setEmployees(response.data);
   };
 
   const deleteEmployees = async (id) => {   
     try {
       window.confirm("Are you sure you want to delete this account")
-      await axios.delete(`http://localhost:5000/api/v1/delete/${id}`);
+      await axios.delete(`https://xain-hotel-server.up.railway.app/api/v1/delete/${id}`);
       getEmployees();
     } catch (error) {
       console.log(error);

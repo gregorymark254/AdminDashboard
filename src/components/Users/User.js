@@ -10,14 +10,14 @@ const User = () => {
   const [searchUser, setSearchUser] = useState("")
 
   const getUsers = async () => {
-    const response = await axios.get("http://localhost:5000/api/v2/users");
+    const response = await axios.get("https://xain-hotel-server.up.railway.app/api/v2/users");
     setUser(response.data);
   };
 
   const deleteUser = async (id) => {
     window.confirm("Are you sure you want to delete this account")
     try {
-      await axios.delete(`http://localhost:5000/api/v2/users/delete/${id}`);
+      await axios.delete(`https://xain-hotel-server.up.railway.app/api/v2/users/delete/${id}`);
       getUsers();
     } catch (error) {
       console.log(error);

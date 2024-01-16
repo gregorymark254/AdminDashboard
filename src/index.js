@@ -2,10 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import  AuthContext  from './components/Context/AuthContext'
-import { BrowserRouter } from 'react-router-dom'
-import { ContextProvider } from "./components/Context/ContextProvider";
-
+import AuthContext from './components/Context/AuthContext';
+import { BrowserRouter } from 'react-router-dom';
+import { ContextProvider } from './components/Context/ContextProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +12,7 @@ root.render(
     <AuthContext>
       <ContextProvider>
         <BrowserRouter>
-          <App/>
+          <App />
         </BrowserRouter>
       </ContextProvider>
     </AuthContext>

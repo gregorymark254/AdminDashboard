@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: 'https://localhost:4000'
+  baseURL: 'https://naija.cleverapps.io'
 });

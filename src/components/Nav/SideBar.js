@@ -16,9 +16,13 @@ const SideBar = () => {
     }
   };
 
+  // user details
+  const name = localStorage.getItem('token');
+  const parsedItem = JSON.parse(name);
+
   return (
     <main className='bg-[#181D31] text-white h-screen md:overflow-hidden relative overflow-auto md:hover:overflow-auto pb-10'>
-      <ToastContainer position='bottom-center' limit={1} />
+      <ToastContainer position='top-right' limit={1} />
       {activeMenu && (
         <>
           <div className='p-4'>
@@ -31,7 +35,7 @@ const SideBar = () => {
               className='items-center gap-3 ml-3 mt-4 flex'
             >
               <img className='h-10 w-10 rounded-full' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaS_K13w6lMdb6kZEGj2wZ3jnIwap2YTpganfCLWXUr_L-7xvEiTEKFC2iNgRO1XJ184A&usqp=CAU' alt='' />
-              <span>Gregory Mark</span>
+              <h2>{parsedItem.data.firstName} {parsedItem.data.lastName}</h2>
             </Link>
             <div className='text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden'>
               <span onClick={() => setActiveMenu(!activeMenu)}><MdOutlineCancel /></span>
@@ -60,7 +64,7 @@ const SideBar = () => {
                         <Link to='/users' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>View All Users</Link>
                       </li>
                       <li className='relative'>
-                        <Link to='#!' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Add User</Link>
+                        <Link to='/user/add' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Add User</Link>
                       </li>
                     </ul>
                   </li>
@@ -74,10 +78,10 @@ const SideBar = () => {
                     </Link>
                     <ul className='relative accordion-collapse collapse' id='collapseSidenavSecEx2' aria-labelledby='sidenavSecEx2' data-bs-parent='#sidenavSecExample'>
                       <li className='relative'>
-                        <Link to='#!' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Video Uploads</Link>
+                        <Link to='/reviews' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Video Uploads</Link>
                       </li>
                       <li className='relative'>
-                        <Link to='#!' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Reviews</Link>
+                        <Link to='/video-uploads' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Reviews</Link>
                       </li>
                     </ul>
                   </li>
@@ -91,13 +95,10 @@ const SideBar = () => {
                     </Link>
                     <ul className='relative accordion-collapse collapse' id='collapseSidenavSecEx1' aria-labelledby='sidenavSecEx1' data-bs-parent='#sidenavSecExample'>
                       <li className='relative'>
-                        <Link to='#!' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Payments</Link>
+                        <Link to='/account-balance' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Payments</Link>
                       </li>
                       <li className='relative'>
-                        <Link to='#!' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Account Balance</Link>
-                      </li>
-                      <li className='relative'>
-                        <Link to='#!' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Account Details</Link>
+                        <Link to='/payments' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Account Balance</Link>
                       </li>
                     </ul>
                   </li>

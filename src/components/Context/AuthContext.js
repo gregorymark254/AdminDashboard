@@ -4,15 +4,13 @@ const Auth = createContext();
 
 const Context = ({ children }) => {
   const initialState = {
-    userInfo: localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null
+    userInfo: localStorage.getItem('token') ? JSON.parse(localStorage.getItem('token')) : null
   };
 
   const cartReducer = (state, action) => {
     switch (action.type) {
       case 'USER_SIGNIN' :
         return { ...state, userInfo: action.payload };
-      case 'USER_SIGNOUT':
-        return { ...state, userInfo: null };
       default:
         return state;
     }

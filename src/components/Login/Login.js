@@ -1,46 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { LoginState } from '../Context/AuthContext';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from '../../api/api';
 import { toast } from 'react-toastify';
+import PropTypes from 'prop-types';
 
-const REG_URL = '/api/auth/login';
+const REG_URL = '/api/v1/login';
 
-const Login = () => {
-  const { state: { userInfo }, dispatch } = LoginState();
-  const navigate = useNavigate();
-  const { search } = useLocation();
-  const redirectInUrl = new URLSearchParams(search).get('redirect');
-  const redirect = redirectInUrl || '/';
-
+const Login = ({ setAccessToken }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      const response = await axios.post(REG_URL,
+      const token = await axios.post(REG_URL,
         JSON.stringify({ email, password }),
         {
           headers: { 'Content-Type': 'application/json' },
           withCredentials: true
-        });
-      dispatch({ type: 'USER_SIGNIN', payload: response });
-      localStorage.setItem('userInfo', JSON.stringify(response));
+        }
+      );
+      setAccessToken(token);
       toast.success('Login Successful');
-      navigate('/');
-      console.log(response?.data);
     } catch (error) {
       console.log(error);
       toast.error('wrong Username or email');
     }
   };
-
-  useEffect(() => {
-    if (userInfo) {
-      navigate(redirect);
-    }
-  }, [navigate, redirect, userInfo]);
 
   return (
     <main>
@@ -86,3 +73,7 @@ const Login = () => {
 };
 
 export default Login;
+
+Login.propTypes = {
+  setAccessToken: PropTypes.func.isRequired
+};

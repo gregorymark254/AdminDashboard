@@ -34,11 +34,11 @@ const Setting = () => {
                   className='w-96 mb-3 ml-4 bg-white border border-slate-300 rounded-md py-2 px-4 pr-2 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1'
                 />
               </label>
-              <label htmlFor='username'>Phone No. :
+              <label htmlFor='username'>Role :
                 <input
                   type='text'
                   required
-                  placeholder='Phone Number'
+                  placeholder='Role'
                   className='w-96 mb-3 ml-4 bg-white border border-slate-300 rounded-md py-2 px-4 pr-2 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1'
                 />
               </label>

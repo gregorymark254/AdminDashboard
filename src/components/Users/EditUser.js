@@ -3,29 +3,29 @@ import axios from '../../api/api';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const EditUser = () => {
-  const [firstname, setFname] = useState('');
-  const [lastname, setLname] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
+  const [role, setRole] = useState('');
   const navigate = useNavigate();
   const { id } = useParams();
 
   const getUserById = async () => {
-    const response = await axios.get(`/api/v2/users/${id}`);
-    setFname(response.data.firstname);
-    setLname(response.data.lastname);
+    const response = await axios.get(`/api/v1/users/${id}`);
+    setFirstName(response.data.firstName);
+    setLastName(response.data.lastName);
     setEmail(response.data.email);
-    setPhone(response.data.phone);
+    setRole(response.data.role);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`/api/v2/users/update/${id}`, {
-        firstname,
-        lastname,
+      await axios.put(`/api/v1/users/update/${id}`, {
+        firstName,
+        lastName,
         email,
-        phone
+        role
       });
       navigate('/users');
     } catch (error) {
@@ -53,8 +53,8 @@ const EditUser = () => {
                 placeholder='First Name'
                 name='fname'
                 id='fname'
-                value={firstname}
-                onChange={(e) => setFname(e.target.value)}
+                value={firstName}
+                onChange={(e) => setFirstName({...firstName,firstName: e.target.value})}
               />
             </div>
             <div className='mb-4'>
@@ -64,8 +64,8 @@ const EditUser = () => {
                 placeholder='Last Name'
                 name='lname'
                 id='lname'
-                value={lastname}
-                onChange={(e) => setLname(e.target.value)}
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
               />
             </div>
             <div className='mb-4'>
@@ -80,22 +80,23 @@ const EditUser = () => {
               />
             </div>
             <div className='mb-4'>
-              <input
-                type='text'
-                autoComplete='off'
+              <select
                 className='form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none'
                 placeholder='Phone Number'
-                name='number'
-                id='number'
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
+                name='' id=''
+                value={role}
+                onChange={(e) => setRole(e.target.value)}
+              >
+                <option value='viewer'>viewer</option>
+                <option value='Admin'>Admin</option>
+                <option value='Creator'>Creator</option>
+              </select>
             </div>
             <div className='text-center pt-1 mb-12 pb-1'>
               <button
                 className='inline-block px-6 py-2.5 bg-[#C21010] text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-[#e04444] hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3'
                 type='submit'
-              > Sign Up
+              > Update
               </button>
             </div>
           </form>

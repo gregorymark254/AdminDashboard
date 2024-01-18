@@ -8,11 +8,15 @@ const Home = () => {
     name: 'a', value: 12
   }];
 
+  // user details
+  const name = localStorage.getItem('token');
+  const parsedItem = JSON.parse(name);
+
   return (
     <main>
       <div className='container mx-auto p-4'>
         <div className='p-6 text-white bg-[#181D31] rounded-lg'>
-          <h2>Hello Gregory</h2>
+          <h2>Hello {parsedItem.data.firstName}</h2>
           <p>This is what we've got for you today.</p>
         </div>
 

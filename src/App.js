@@ -8,6 +8,7 @@ import Balance from './components/Account/Balance';
 import Payments from './components/Account/Payments';
 import Reviews from './components/Uploads/Reviews';
 import VideoUploads from './components/Uploads/VideoUplods';
+import MyUploads from './components/Uploads/MyUploads'
 
 import Home from './pages/Home';
 import Login from './components/Login/Login';
@@ -62,6 +63,7 @@ const App = () => {
               <Route path='/payments' element={<Payments />} />
               <Route path='/reviews' element={<Reviews />} />
               <Route path='/video-uploads' element={<VideoUploads />} />
+              <Route path='/my-uploads' element={<MyUploads />} />
               <Route path='/settings' element={<Setting />} />
               <Route path='/unauthorised' element={<Unauthorised />} />
               <Route path='*' element={<Missing />} Missing />

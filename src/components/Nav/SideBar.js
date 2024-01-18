@@ -78,10 +78,13 @@ const SideBar = () => {
                     </Link>
                     <ul className='relative accordion-collapse collapse' id='collapseSidenavSecEx2' aria-labelledby='sidenavSecEx2' data-bs-parent='#sidenavSecExample'>
                       <li className='relative'>
+                        <Link to='/my-uploads' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>My Uploads</Link>
+                      </li>
+                      <li className='relative'>
                         <Link to='/video-uploads' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Upload Video</Link>
                       </li>
                       <li className='relative'>
-                        <Link to='/reviews' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Reviews Video</Link>
+                        <Link to='/reviews' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Review Video</Link>
                       </li>
                     </ul>
                   </li>

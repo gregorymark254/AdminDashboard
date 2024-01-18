@@ -54,7 +54,7 @@ const EditUser = () => {
                 name='fname'
                 id='fname'
                 value={firstName}
-                onChange={(e) => setFirstName({...firstName,firstName: e.target.value})}
+                onChange={(e) => setFirstName({firstName})}
               />
             </div>
             <div className='mb-4'>

@@ -78,10 +78,10 @@ const SideBar = () => {
                     </Link>
                     <ul className='relative accordion-collapse collapse' id='collapseSidenavSecEx2' aria-labelledby='sidenavSecEx2' data-bs-parent='#sidenavSecExample'>
                       <li className='relative'>
-                        <Link to='/reviews' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Video Uploads</Link>
+                        <Link to='/video-uploads' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Upload Video</Link>
                       </li>
                       <li className='relative'>
-                        <Link to='/video-uploads' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Reviews</Link>
+                        <Link to='/reviews' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Reviews Video</Link>
                       </li>
                     </ul>
                   </li>
@@ -95,10 +95,10 @@ const SideBar = () => {
                     </Link>
                     <ul className='relative accordion-collapse collapse' id='collapseSidenavSecEx1' aria-labelledby='sidenavSecEx1' data-bs-parent='#sidenavSecExample'>
                       <li className='relative'>
-                        <Link to='/account-balance' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Payments</Link>
+                        <Link to='/account-balance' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>My Account</Link>
                       </li>
                       <li className='relative'>
-                        <Link to='/payments' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Account Balance</Link>
+                        <Link to='/payments' className='flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out' data-mdb-ripple='true' data-mdb-ripple-color='primary'>Payments</Link>
                       </li>
                     </ul>
                   </li>
